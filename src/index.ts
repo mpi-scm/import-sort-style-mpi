@@ -1,5 +1,9 @@
 import {IStyleAPI, IStyleItem} from "import-sort-style";
 
+import {sortersSequence} from "./sortersSequence";
+import {nestingComparator} from "./nestingComparator";
+import {moduleSorter} from "./moduleSorter";
+
 export default function(styleApi: IStyleAPI): IStyleItem[] {
   const {
     isAbsoluteModule,
@@ -13,27 +17,29 @@ export default function(styleApi: IStyleAPI): IStyleItem[] {
     and,
   } = styleApi;
 
+  const defaultSorter = sortersSequence(moduleSorter(unicode), member(unicode));
+
   return [
     {
       match: and(isInstalledModule(__filename), moduleName(startsWith("react"))),
-      sort: member(unicode),
+      sort: defaultSorter,
       sortNamedMembers: name(unicode),
     },
     {
       match: isInstalledModule(__filename),
-      sort: member(unicode),
+      sort: defaultSorter,
       sortNamedMembers: name(unicode),
     },
     { separator: true },
     {
       match: isAbsoluteModule,
-      sort: member(unicode),
+      sort: defaultSorter,
       sortNamedMembers: name(unicode),
     },
     { separator: true },
     {
       match: always,
-      sort: member(unicode),
+      sort: sortersSequence(moduleSorter(nestingComparator), defaultSorter),
       sortNamedMembers: name(unicode),
     }
   ];

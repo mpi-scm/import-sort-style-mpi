@@ -1,6 +1,6 @@
 {
   "name": "import-sort-style-mpi",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "description": "MPI import-sort style",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -26,9 +26,12 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.0",
     "eslint-plugin-react": "^7.12.4",
-    "import-sort-parser": "^6.0.0",
-    "import-sort-style": "^6.0.0",
     "ts-node": "^8.0.2",
-    "typescript": "^3.2.4"
+    "typescript": "^3.2.4",
+    "import-sort-parser": "^6.0.0",
+    "import-sort-style": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   }
 }

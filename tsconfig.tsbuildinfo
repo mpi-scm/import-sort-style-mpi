@@ -131,10 +131,20 @@
         "signature": "4f435f794b7853c55e2ae7cff6206025802aa79232d2867544178f2ca8ff5eaa",
         "affectsGlobalScope": true
       },
+      "./node_modules/typescript/lib/lib.es2020.string.d.ts": {
+        "version": "faf0221ae0465363c842ce6aa8a0cbda5d9296940a8e26c86e04cc4081eea21e",
+        "signature": "faf0221ae0465363c842ce6aa8a0cbda5d9296940a8e26c86e04cc4081eea21e",
+        "affectsGlobalScope": true
+      },
       "./node_modules/typescript/lib/lib.esnext.intl.d.ts": {
         "version": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
         "signature": "89bf2b7a601b73ea4311eda9c41f86a58994fec1bee3b87c4a14d68d9adcdcbd",
         "affectsGlobalScope": true
+      },
+      "./src/countNesting.ts": {
+        "version": "2100de5de712feff28b2bae3f646ed21ce390eebacd63c6ca4161c890a5c2068",
+        "signature": "e15a91ada151856f751727897a34786ff355716e1dd3493e99ffea62c24ed5ef",
+        "affectsGlobalScope": false
       },
       "./node_modules/import-sort-parser/lib/index.d.ts": {
         "version": "9981fd90e6250aefa91ef87f472abfa49db60aa9e8d27d34e146829f92c3da7e",
@@ -146,8 +156,23 @@
         "signature": "704bb81510a81a95cbb04cec001d7acc6adf4a6a77b15b77b053f6b332566785",
         "affectsGlobalScope": false
       },
+      "./src/sortersSequence.ts": {
+        "version": "9a9edac0d20fadd17d3507e4022d764abfc731f10b91df40c76ea0f906219785",
+        "signature": "d8f0ff599c7a2184373d332487ff1436ca36800feede0869d17f470ba768777a",
+        "affectsGlobalScope": false
+      },
+      "./src/nestingComparator.ts": {
+        "version": "adc6f7941fcc79f1a2f7a678b1292546302e37b0146f6c204104e6dbc8e270bd",
+        "signature": "7c0b0b01eb1d2df19fa1ee3620bde82c384e8e80e1bb5caa29e384a54794763e",
+        "affectsGlobalScope": false
+      },
+      "./src/moduleSorter.ts": {
+        "version": "3eab43c9140e0242809beb6b6c85e714f54e237e48ea924bf89a6e29f4971ca6",
+        "signature": "da274d971e2c4aa687409d410918c2675d68f83aa7504c887dc4adbe500ee8f5",
+        "affectsGlobalScope": false
+      },
       "./src/index.ts": {
-        "version": "e82c8e8061b025cef2192c0521cef32892c40cf7743b1bee185c24d7fb13e4c3",
+        "version": "4e2645b09f2171961932b7a572eb61b7234ae0596412ecc7b6fb892cebd48802",
         "signature": "cd7fb314b7be0dff543d95467445fc49a98e90cc5136289a62d60a286c6eba11",
         "affectsGlobalScope": false
       },
@@ -382,7 +407,8 @@
         "node"
       ],
       "lib": [
-        "lib.es2017.d.ts"
+        "lib.es2017.d.ts",
+        "lib.es2020.string.d.ts"
       ],
       "configFilePath": "./tsconfig.json"
     },
@@ -532,6 +558,18 @@
         "./node_modules/import-sort-parser/lib/index.d.ts"
       ],
       "./src/index.ts": [
+        "./node_modules/import-sort-style/lib/index.d.ts",
+        "./src/moduleSorter.ts",
+        "./src/nestingComparator.ts",
+        "./src/sortersSequence.ts"
+      ],
+      "./src/moduleSorter.ts": [
+        "./node_modules/import-sort-style/lib/index.d.ts"
+      ],
+      "./src/nestingComparator.ts": [
+        "./src/countNesting.ts"
+      ],
+      "./src/sortersSequence.ts": [
         "./node_modules/import-sort-style/lib/index.d.ts"
       ]
     },
@@ -682,6 +720,12 @@
       ],
       "./src/index.ts": [
         "./node_modules/import-sort-style/lib/index.d.ts"
+      ],
+      "./src/moduleSorter.ts": [
+        "./node_modules/import-sort-style/lib/index.d.ts"
+      ],
+      "./src/sortersSequence.ts": [
+        "./node_modules/import-sort-style/lib/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -755,9 +799,14 @@
       "./node_modules/typescript/lib/lib.es2018.promise.d.ts",
       "./node_modules/typescript/lib/lib.es2018.regexp.d.ts",
       "./node_modules/typescript/lib/lib.es2020.bigint.d.ts",
+      "./node_modules/typescript/lib/lib.es2020.string.d.ts",
       "./node_modules/typescript/lib/lib.es5.d.ts",
       "./node_modules/typescript/lib/lib.esnext.intl.d.ts",
-      "./src/index.ts"
+      "./src/countNesting.ts",
+      "./src/index.ts",
+      "./src/moduleSorter.ts",
+      "./src/nestingComparator.ts",
+      "./src/sortersSequence.ts"
     ]
   },
   "version": "3.9.9"
